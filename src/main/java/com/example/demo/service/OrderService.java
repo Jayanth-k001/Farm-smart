@@ -62,8 +62,7 @@ public class OrderService {
 	public Orders confirm(OrdersDTO ord) {
 		Orders order = ordrepo.findByemail(ord.getEmail(), ord.getProduct_name(), ord.getDateTime());
         order.setStatus("Delivered");
-        ordrepo.save(order);
-		return null;
+        return  ordrepo.save(order);
 	}
 
 
